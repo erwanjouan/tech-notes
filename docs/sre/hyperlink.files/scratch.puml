@@ -1,0 +1,32 @@
+@startuml
+actor Bob #red
+participant Computer
+participant Resolver
+participant DNS_Root_Server
+participant DNS_TLD_Server
+participant DNS_Google_Server
+participant Google_Reverse_Proxy
+
+Bob->Computer: click on link
+Note over Computer:- Parse URL\nhttps:www.google.com\n- Get Domain name\ngoogle.com\n- DNS Lookup\n(Find IP address)
+Note over Computer:Lookup IP\nin Browser Cache
+Note over Computer:Lookup IP\nin OS Cache
+Computer->Resolver:Lookup IP\nin Resolver Cache
+Note over Resolver: Nope
+Resolver->DNS_Root_Server: google.com ?
+Note over DNS_Root_Server: lookup in \ntop level domain\ndirectory
+DNS_Root_Server->Resolver: go to .com\nTLD server
+Resolver->DNS_TLD_Server: google.com ?
+Note over DNS_TLD_Server: lookup in\n.com\ndomain
+DNS_TLD_Server->Resolver: go to authoritative name server for google.com
+Resolver->DNS_Google_Server:google.com ?
+Note over DNS_Google_Server: lookup in\ndirectory
+DNS_Google_Server->Resolver:IP=A.B.C.D
+Resolver->Computer:IP=A.B.C.D
+Computer->Google_Reverse_Proxy:HTTPS GET https://www.google.com
+Note across:HTTPS Authentication Handshake
+Google_Reverse_Proxy->Google_Web_Front:HTTP GET
+Google_Web_Front->Google_Reverse_Proxy:RESPONSE
+Google_Reverse_Proxy -> Computer:RESPONSE
+
+@enduml

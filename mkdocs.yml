@@ -1,0 +1,62 @@
+site_name: Tech notes
+nav:
+  - Devops:
+      - 'Notions Devops': devops/notions_devops.md
+      - 'Notions Devops 2': devops/notions_devops2.md
+  - Algorithme:
+      - Algorithme: algo/algo.md
+  - Java:
+      - 'Entreprise Patterns': java/patterns_of_entreprise.md
+      - 'Spring Boot':
+        - 'Spring Boot Learning Path': java/boot/spring_boot_learning_path.md
+        - 'Spring Boot 2.3': java/boot/spring_boot_2.3.md
+        - 'Spring Boot AutoConf': java/boot/spring_boot_auto_conf.md
+        - 'Spring Boot Super Powers': java/boot/spring_boot_super_power.md
+        - 'Bootiful Testing': java/boot/spring_bootiful_testing.md
+        - 'Spring Boot TDD': java/boot/spring_boot_tdd.md
+        - 'WebFlux': java/boot/webflux.md
+      - Tools:
+          - Maven: java/build/maven.md
+          - Performance: java/Performance/jvm.md
+      - Testing:
+          - Junit5: java/testing/junit5.md
+          - Framework: java/testing/tests.md
+          - TDD: java/testing/tdd/start.md
+  - Git:
+      - Cheatsheet: git/cheatsheet.md
+      - 'Pro tips': git/protips.md
+  - Docker:
+      - Docker: docker/docker.md
+  - SRE:
+      - 'Chaos Engineering': sre/chaos.md
+      - Network: sre/network.md
+      - SRE: sre/sre.md
+      - Tools: sre/tools.md
+      - Oauth: sre/oauth.md
+  - 'Kubernetes':
+      - 'Observability':
+          - 'Conf': k8s/conf.md
+      - Rancher: k8s/rancher.md
+theme:
+  name: material
+  palette:
+    scheme: slate
+  features:
+    - search.suggest
+    - navigation.tabs
+    - content.code.copy
+plugins:
+  - search
+  - mkdocs-video # Usage in md: ![type:video](https://www.youtube.com/embed/1OChlDQIKqA)
+markdown_extensions:
+  - pymdownx.critic # https://squidfunk.github.io/mkdocs-material/reference/formatting/
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - mdx_truly_sane_lists
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
