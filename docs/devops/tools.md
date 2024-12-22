@@ -26,14 +26,14 @@ top -v
 
 #### Centos top
 
-![a](./top.files/topLinux.png)
+![a](top.files/topLinux.png)
 
 
 #### Ubuntu top
 
-![a](./top.files/topUbuntu.png)
+![a](top.files/topUbuntu.png)
 
-- [top_linux.pdf](./top.files/top_linux.pdf)
+- [top_linux.pdf](top.files/top_linux.pdf)
 
 Interactive mode:
 
@@ -44,7 +44,7 @@ Showing full path : c / C
 
 #### MacOS X top
 
-![a](./top.files/topMac.png)
+![a](top.files/topMac.png)
 
 | Column     | Description                                                                                                                                           |
 |------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|

@@ -3,6 +3,12 @@ nav:
   - Devops:
       - 'Notions Devops': devops/notions_devops.md
       - 'Notions Devops 2': devops/notions_devops2.md
+      - 'Chaos Engineering': devops/chaos.md
+      - Network: devops/network.md
+      - Https: devops/https.md
+      - Sre@Google: devops/sre.md
+      - Tools: devops/tools.md
+      - Oauth: devops/oauth.md
   - Algorithme:
       - Algorithme: algo/algo.md
   - Java:
@@ -15,6 +21,16 @@ nav:
         - 'Bootiful Testing': java/boot/spring_bootiful_testing.md
         - 'Spring Boot TDD': java/boot/spring_boot_tdd.md
         - 'WebFlux': java/boot/webflux.md
+      - 'Spring Batch':
+          - 'Architecture': java/batch/architecture.md
+          - 'Fault Tolerance': java/batch/fault_tolerance.md
+          - 'High Performance Batch Processing (2018)': java/batch/high_perf.md
+          - 'Batch Processing (2019)': java/batch/batch_2019.md
+          - 'Batching for the Modern Enterprise (2020)': java/batch/entreprise.md
+          - 'Cloud Native Batch Processing (2020)': java/batch/cloud_native.md
+          - 'Testing': java/batch/testing.md
+      - 'Atomikos':
+          - 'Intro': java/atomikos/intro.md
       - Tools:
           - Maven: java/build/maven.md
           - Performance: java/Performance/jvm.md
@@ -22,21 +38,29 @@ nav:
           - Junit5: java/testing/junit5.md
           - Framework: java/testing/tests.md
           - TDD: java/testing/tdd/start.md
+  - Maven:
+      - Intro: maven/maven.md
   - Git:
       - Cheatsheet: git/cheatsheet.md
       - 'Pro tips': git/protips.md
   - Docker:
       - Docker: docker/docker.md
-  - SRE:
-      - 'Chaos Engineering': sre/chaos.md
-      - Network: sre/network.md
-      - SRE: sre/sre.md
-      - Tools: sre/tools.md
-      - Oauth: sre/oauth.md
   - 'Kubernetes':
       - 'Observability':
           - 'Conf': k8s/conf.md
       - Rancher: k8s/rancher.md
+      - Rbac: k8s/rbac.md
+  - Python:
+      - Notes: python/notes.md
+  - Tech Lead:
+      - Notes: tech_lead/notes.md
+  - Methodology:
+      - 'Agile Tenets': methodology/tenets.md
+      - 'Twelve Factor app': methodology/twelve_factor.md
+  - Banking:
+      - Sepa: banking/sepa.md
+      - Monetique: banking/monetique.md
+
 theme:
   name: material
   palette:
@@ -48,7 +72,9 @@ theme:
 plugins:
   - search
   - mkdocs-video # Usage in md: ![type:video](https://www.youtube.com/embed/1OChlDQIKqA)
+  - markdown-exec
 markdown_extensions:
+  - attr_list
   - pymdownx.critic # https://squidfunk.github.io/mkdocs-material/reference/formatting/
   - pymdownx.caret
   - pymdownx.keys

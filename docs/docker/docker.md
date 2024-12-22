@@ -1,6 +1,6 @@
 ## Docker lifecycle
 
-![a](/docker/docker.files/lifecycle.png)
+![a](docker.files/lifecycle.png)
 
 ## Docker security
 

@@ -4,7 +4,7 @@ date: 2020-09-02T11:22:03+02:00
 draft: false
 ---
 
-![a](/git/cheatsheet.files/git_cheat_sheet.jpeg)
+![a](cheatsheet.files/git_cheat_sheet.jpeg)
 
 # Tips
 

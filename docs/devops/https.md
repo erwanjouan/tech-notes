@@ -1,56 +1,16 @@
-### What happens when you click on a link ?
+# Https
 
-https://www.freecodecamp.org/news/what-happens-when-you-hit-url-in-your-browser/
-
-https://tara-ojo.medium.com/what-happens-when-you-click-a-link-in-the-browser-83b4337c78dc
-
-![a](./hyperlink.files/dns.png)
-
-![a](./hyperlink.files/flow.png)
-
-### Reverse proxy
-
-E2E internet communication:
-
-![a](./proxy.files/global.png)
-
-Forward proxy:
-
-![a](./proxy.files/forward.png)
-
-Reverse proxy:
-
-![a](./proxy.files/reverse.png)
-
-Reverse proxy with firewall:
-
-![a](./proxy.files/fw.gif)
-
-BD (Octo talks)
-
-https://blog.octo.com/bd-le-proxy-et-le-reverse-proxy/
-
-![a](./proxy.files/bd.png)
-
-### Quic
-
-As Numerama is hosted by Cloudflare, they use Quic as session protocol (instead of Https).
-
-https://cloudflare-quic.com/
-
-https://blog.cloudflare.com/http3-the-past-present-and-future/
-
-### HTTPS
+## How does it work ?
 
 ![type:video](https://www.youtube.com/embed/T4Df5_cojAs)
 
-#### Prerequisites
+### Prerequisites
 
 - You need to assume:
   - Any message encrypted with Bob's public key can only be decrypted with Bob's private key
   - Anyone with access to Alice's public key can verify that a message (signature) could only have been created by someone with access to Alice's private key
 
-#### Certificate Authority
+### Certificate Authority
 
 Certificate of youtube is signed by Google CA. Both youtube and Google have a keyPair.
 
@@ -61,7 +21,7 @@ In return, Google CA signs the certificate with its private key, anyone who has 
 Most browsers have a list of certificate that are delivered by known CA.
 
 
-#### Self signed certificate
+### Self signed certificate
 
 To communicate securely with an app on staging env, you need to create an app with a private key and a public key. Next step would be to create a signing request, but no ones will sign this certificate.
 
@@ -71,9 +31,9 @@ When a client connects to this app, the public key of the app gets retrieved and
 
 The constaint is that you have to tell your client that the newly created CA can be trusted.
 
-#### Public Key Certificate
+### Public Key Certificate
 
-![a](./https.files/public_key_certif.png)
+![a](https.files/public_key_certif.png)
 
 - Resolves the problem of public key forgery.
   - Certificate is basically a set of properties in clear text, associated with a period of validity and a public key. 
@@ -83,11 +43,11 @@ The constaint is that you have to tell your client that the newly created CA can
 ![type:video](https://www.youtube.com/embed/704dudhA7UI)
 
 
-### TLS
+## TLS
 
 https://medium.com/jspoint/a-brief-overview-of-the-tcp-ip-model-ssl-tls-https-protocols-and-ssl-certificates-d5a6269fe29e
 
-#### TLS v1.3
+### TLS v1.3
 
 https://www.davidwong.fr/tls13/
 
@@ -95,15 +55,15 @@ https://tls13.ulfheim.net/
 
 https://tools.ietf.org/html/rfc3552
 
-#### TLS v1.2
+### TLS v1.2
 
 ![type:video](https://www.youtube.com/embed/86cQJ0MMses)
 
-![a](./tls.files/tls1.png)
-![a](./tls.files/tls2.png)
-![a](./tls.files/tls3.png)
+![a](tls.files/tls1.png)
+![a](tls.files/tls2.png)
+![a](tls.files/tls3.png)
 
-#### Diffie Hellman high level overview
+### Diffie Hellman high level overview
 
 ![type:video](https://www.youtube.com/embed/NmM9HA2MQGI)
 
@@ -127,4 +87,15 @@ sequenceDiagram
     Alice->>Bob: Send A*G
     Note over Bob: Compute A*B*G
     Note over Alice,Bob: Alice share the same key A*B*G, whoch never got over the wire
+```
+
+
+## Utilities
+
+### Check certificate validity
+
+```bash exec="1" source="material-block"
+echo \
+    	| openssl s_client -connect google.fr:443 \
+    	| openssl x509 -startdate -enddate -noout
 ```

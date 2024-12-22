@@ -20,7 +20,7 @@ draft: false
 AssertJ annotations 
 
 
-![a](/java/boot/spring_tdd.files/test_annotation.png)
+![a](spring_tdd.files/test_annotation.png)
 
 #### Workflow
 

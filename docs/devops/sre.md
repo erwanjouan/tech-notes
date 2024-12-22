@@ -7,7 +7,7 @@ weight: 1
 
 ### SRE
 
-- [Site.Reliability.Engineering.2016.3](./sre.files/Site.Reliability.Engineering.2016.3.pdf)
+- [Site.Reliability.Engineering.2016.3](sre.files/Site.Reliability.Engineering.2016.3.pdf){:target="_blank"}
 
 p18
 > Reliability is the most fundamental feature of any product: a system isn’t very useful if nobody can use it

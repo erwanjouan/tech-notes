@@ -1,17 +1,13 @@
----
-title: "Protips"
-date: 2021-06-13T09:49:48+02:00
-draft: false
----
+# Git Protips
 
 ![type:video](https://www.youtube.com/embed/OgVQDtEf0w8)
 
-### Definition
+## Definition
 
 **Atomic commit**
 > if you fix a bug, the fix should have all and nothing but the modification used for the fix.
 
-### Configuration
+## Configuration
 
 
 Better show untracked files
@@ -23,7 +19,7 @@ git config --global color.status.untracked 'white red'
 git config --global color.status.unmerged 'magenta italic'
 ```
 
-### Stage
+## Stage
 
 Show stage, see which files will be commited
 ```sh
@@ -49,7 +45,7 @@ Cancel part of stage
 git restore --staged index.html
 ```
 
-### Edit commit
+## Edit commit
 
 Modify the last commit
 ```sh
@@ -70,7 +66,7 @@ Change last commit message
 git oops -m 'my new commit message'
 ```
 
-### Stash
+## Stash
 
 Put all current workspace to stash (```-u``` untracked ```-m``` to specify a stash name)
 ```sh
@@ -85,7 +81,7 @@ To get the stash back, avoid apply prefer pop to drop the stash entry once reapp
 git stash pop --index
 ```
 
-### Logs
+## Logs
 
 Better git log. ```abbrevCommit``` outputs the first 7 commits, which is generally sufficient.
 ```sh

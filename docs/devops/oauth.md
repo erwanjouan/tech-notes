@@ -108,9 +108,9 @@ Starting the flow:
 
 ```
 https://accounts.google.com/o/oauth2/v2/auth?
-    client_id=815946762465-612h4f8eeoio8c24cbkaafcjb5bbjcpo.apps.googleusercontent.com
-    redirect_url=https://oauthdebugger.com/debug
-    scode=profile&
+    client_id=815946762465-612h4f8eeoio8c24cbkaafcjb5bbjcpo.apps.googleusercontent.com&
+    redirect_uri=https://oauthdebugger.com/debug&
+    scope=profile&
     response_type=code&
     state=foobar
 ```
